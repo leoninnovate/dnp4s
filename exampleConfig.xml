@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    Copyright 2013 Automatak, LLC
+
+    Licensed to Automatak, LLC under one or more contributor license agreements.
+    See the NOTICE file distributed with this work for additional information
+    regarding copyright ownership. Automatak, LLC licenses this file to you
+    under the GNU Affero General Public License Version 3.0 (the "License");
+    you may not use this file except in compliance with the License. You may
+    obtain a copy of the License at
+
+    http://www.gnu.org/licenses/agpl.html
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+    License for the specific language governing permissions and limitations under
+    the License.
+
+-->
+<Config>
+    <Filter>
+        <Id>supports.datalinkconfirm</Id>
+        <Value>true</Value>
+    </Filter>
+    <Filter>
+        <Id>supportsSelfAddress</Id>
+        <Value>false</Value>
+    </Filter>
+    <Filter>
+        <Id>supports.crob</Id>
+        <Value>true</Value>
+    </Filter>
+    <Option>
+        <Id>command.selectTimeout</Id>
+        <Value>5000</Value>
+    </Option>
+    <Option>
+        <Id>crob1.validIndex</Id>
+        <Value>0</Value>
+    </Option>
+    <Option>
+        <Id>crob2.validIndex</Id>
+        <Value>1</Value>
+    </Option>
+    <Option>
+        <Id>crob1.invalidIndex</Id>
+        <Value>5</Value>
+    </Option>
+    <Option>
+        <Id>crob2.invalidIndex</Id>
+        <Value>6</Value>
+    </Option>
+    <Option>
+        <Id>crob1.validFunction</Id>
+        <Value>3</Value>
+    </Option>
+    <Option>
+        <Id>crob2.validFunction</Id>
+        <Value>4</Value>
+    </Option>
+    <Option>
+        <Id>crob1.validCount</Id>
+        <Value>1</Value>
+    </Option>
+    <Option>
+        <Id>crob2.validCount</Id>
+        <Value>1</Value>
+    </Option>
+    <Option>
+        <Id>crob1.validOnTime</Id>
+        <Value>100</Value>
+    </Option>
+    <Option>
+        <Id>crob1.validOffTime</Id>
+        <Value>100</Value>
+    </Option>
+    <Option>
+        <Id>crob2.validOnTime</Id>
+        <Value>100</Value>
+    </Option>
+    <Option>
+        <Id>crob2.validOffTime</Id>
+        <Value>100</Value>
+    </Option>
+</Config>
