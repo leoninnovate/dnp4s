@@ -20,6 +20,7 @@ package com.automatak.dnp4s.conformance.procedures.section9
 
 import com.automatak.dnp4s.conformance._
 import com.automatak.dnp4s.conformance.procedures.{ AppSteps }
+import com.automatak.dnp4s.conformance.procedures.CommonSteps.PromptForUserAction
 
 object Section9 extends TestSection {
 
@@ -37,10 +38,11 @@ object Section91 extends TestProcedure {
   def steps(options: TestOptions): List[(String, List[TestStep])] = {
 
     List(
-      "1" -> List(AppSteps.ReadNullUnsol(None, false)),
-      "2" -> List(AppSteps.RequestClass0(0)),
-      "3" -> List(LinkSteps.ExpectLpduTimeout),
-      "4" -> List(AppSteps.ReadAnyValidResponseUnconfirmedWithSeq(0)))
+      "1" -> List(PromptForUserAction("Set unsolcited retries to something greater than 0")),
+      "2" -> List(AppSteps.ReadNullUnsol(None, false)),
+      "3" -> List(AppSteps.RequestClass0(0)),
+      "4" -> List(LinkSteps.ExpectLpduTimeout),
+      "5" -> List(AppSteps.ReadAnyValidResponseUnconfirmedWithSeq(1)))
   }
 
 }
