@@ -16,16 +16,31 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.automatak.dnp4s.conformance.procedures
+package com.automatak.dnp4s.conformance.procedures.section9
 
-import section5.Section5
-import section6.Section6
-import section7.Section7
-import section9.Section9
-import com.automatak.dnp4s.conformance.TestProcedure
+import com.automatak.dnp4s.conformance._
+import com.automatak.dnp4s.conformance.procedures.{ AppSteps }
 
-object ConformanceProcedure {
+object Section9 extends TestSection {
 
-  def procedures: List[TestProcedure] = List(Section5, Section6, Section7, Section9)
+  def id = "9"
+  def description = "Custom App Tests"
+  override def subProcedures = List(Section91)
+
+}
+
+object Section91 extends TestProcedure {
+
+  def id = "9.1"
+  def description = "Read during Null Unsol"
+
+  def steps(options: TestOptions): List[(String, List[TestStep])] = {
+
+    List(
+      "1" -> List(AppSteps.ReadNullUnsol(None, false)),
+      "2" -> List(AppSteps.RequestClass0(0)),
+      "3" -> List(LinkSteps.ExpectLpduTimeout),
+      "4" -> List(AppSteps.ReadAnyValidResponseUnconfirmedWithSeq(0)))
+  }
 
 }
